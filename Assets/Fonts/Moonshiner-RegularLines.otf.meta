@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: be7472bbd8a79e948ab896db2ccb4314
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Moonshiner
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: a726ff79e3445b2468bfc275cf02f88a, type: 3}
+  - {fileID: 12800000, guid: 87cb936aa634fe84eaadbfc9918c0882, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
