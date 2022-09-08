@@ -9,9 +9,7 @@ public class MenuButtonsManager : MonoBehaviour
 
     [Header("Animation")]
     public float duration = .2f;
-
     public float delay = .05f;
-
     public Ease ease = Ease.OutBack;
 
     private void OnEnable()
