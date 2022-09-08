@@ -10,20 +10,34 @@ public class Player : MonoBehaviour
 
     public float speed;
 
+    public float forceJump = 50f;
+
+
     // Update is called once per frame
     private void Update()
     {
+        HandleJump();
+        HandleMovement();
+
+    }
+
+    private void HandleMovement()
+    {
+
         if (Input.GetKey(KeyCode.LeftArrow))
         {
             myRigidbody.velocity = new Vector2(-speed, myRigidbody.velocity.y);
-            //myRigidbody.MovePosition(myRigidbody.position - velocity *Time.deltaTime);
         }
 
         if (Input.GetKey(KeyCode.RightArrow))
         {
             myRigidbody.velocity = new Vector2(speed, myRigidbody.velocity.y);
-            //myRigidbody.MovePosition(myRigidbody.position + velocity * Time.deltaTime);
-
         }
+    }
+
+    private void HandleJump()
+    {
+        if (Input.GetKey(KeyCode.Space))
+            myRigidbody.velocity = Vector2.up * forceJump;
     }
 }
