@@ -9,6 +9,8 @@ public class GameManager : Singleton<GameManager>
     [Header("Player")]
     public GameObject playerPrefab;
     public GameObject salute;
+    public GameObject npcTalk1;
+    public GameObject npcTalk2;
 
     [Header("Enemies")]
     public List<GameObject> enemies;
@@ -29,12 +31,13 @@ public class GameManager : Singleton<GameManager>
     {
         Init();
         salute.SetActive(true);
+        npcTalk1.SetActive(true);
+        npcTalk2.SetActive(true);
     }
 
     public void Init()
     {
         SpawnPlayer();
-        salute.SetActive(true);
     }
 
     private void SpawnPlayer()
