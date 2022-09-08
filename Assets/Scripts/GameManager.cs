@@ -8,6 +8,7 @@ public class GameManager : Singleton<GameManager>
 {
     [Header("Player")]
     public GameObject playerPrefab;
+    public GameObject salute;
 
     [Header("Enemies")]
     public List<GameObject> enemies;
@@ -22,15 +23,18 @@ public class GameManager : Singleton<GameManager>
     public float delay = .05f;
     public Ease ease = Ease.OutBack;
 
+    
 
     private void Start()
     {
         Init();
+        salute.SetActive(true);
     }
 
     public void Init()
     {
         SpawnPlayer();
+        salute.SetActive(true);
     }
 
     private void SpawnPlayer()
