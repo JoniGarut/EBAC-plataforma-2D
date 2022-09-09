@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 public class Player : MonoBehaviour
 {
@@ -8,8 +9,10 @@ public class Player : MonoBehaviour
 
     #region P1 References
 
-    public Rigidbody2D myRigidbody;
+    [Header("Physics Setup")]
 
+    public Rigidbody2D myRigidbody;
+    
     public Vector2 friction = new Vector2(.1f, 0);
 
     public float speed;
@@ -18,6 +21,9 @@ public class Player : MonoBehaviour
     private float _currentSpeed;
 
     public float forceJump = 50f;
+
+    //[Header("Animation Setup")]
+
 
     #endregion
 
@@ -71,7 +77,9 @@ public class Player : MonoBehaviour
     private void HandleJump()
     {
         if (Input.GetKey(KeyCode.Space))
-            myRigidbody.velocity = Vector2.up * forceJump;
+        {
+            myRigidbody.velocity = Vector2.up * forceJump;    
+        }
     }
 
     #endregion
