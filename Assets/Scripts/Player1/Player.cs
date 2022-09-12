@@ -24,6 +24,11 @@ public class Player : MonoBehaviour
 
     //[Header("Animation Setup")]
 
+    [Header("Animation Player")]
+
+    public string boolWalk;
+    public string boolRun;
+    public Animator p1Animator;
 
     #endregion
 
@@ -49,21 +54,29 @@ public class Player : MonoBehaviour
             _currentSpeed = speed;
 
         // BASIC : x coord moves rigidbody left and right through velocity and keycode input
-            if (Input.GetKey(KeyCode.LeftArrow))
+        if (Input.GetKey(KeyCode.LeftArrow))
         {
             myRigidbody.velocity = new Vector2(-_currentSpeed, myRigidbody.velocity.y);
+            myRigidbody.transform.localScale = new Vector2(1, 1);
+            p1Animator.SetBool(boolWalk, true);
         }
-        if (Input.GetKey(KeyCode.RightArrow))
+        else if (Input.GetKey(KeyCode.RightArrow))
         {
             myRigidbody.velocity = new Vector2(_currentSpeed, myRigidbody.velocity.y);
-        }       
+            myRigidbody.transform.localScale = new Vector2(-1, 1);
+            p1Animator.SetBool(boolWalk, true);
+        }
+        else
+        {
+            p1Animator.SetBool(boolWalk, false);
+        }
 
         //atrito
         if (myRigidbody.velocity.x < 0)
         {
             myRigidbody.velocity += friction;
         }
-        if (myRigidbody.velocity.x > 0)
+        else if (myRigidbody.velocity.x > 0)
         {
             myRigidbody.velocity -= friction;
         }
